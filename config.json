@@ -1,0 +1,52 @@
+{
+    "isLocal": false,
+    "isLive": false,
+    "dynamic_tokens": false,
+    "txSpeed": -100,
+    "flashloan": {
+        "amount" : 13,
+        "fee": 0.3
+    },
+    "arbitrage":{
+        "type": "linear",
+        "minDifference": 0,
+        "tokens": [
+            {
+                "name" : "Wrapped Ether",
+                "symbol": "WETH",
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+            },
+            {
+                "name": "Shiba Inu",
+                "symbol": "SHIB",
+                "address": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+            }
+        ]
+    },
+    "alchemy": {
+        "http": "https://eth-mainnet.g.alchemy.com/v2/",
+        "ws": "wss://eth-mainnet.alchemyapi.io/v2/",
+        "key": "QEX23q7miRIkHfbfGn8zoYZU-HUPsoqr"
+    },
+    "ganache":{
+        "mnemonic": "oyster safe recipe economy acquire desert such book bronze indoor castle unable",
+        "port": 8545,
+        "whale":{
+            "usdc": "0x28C6c06298d514Db089934071355E5743bf21d60"
+        }
+    },
+    "exchanges" : {
+        "uniswap" : {
+            "name" : "uniswap",
+            "icon": "🦄",
+            "router": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+            "factory": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+        },
+        "sushiswap" : {
+            "name" : "sushiswap",
+            "icon": "🍣",
+            "router": "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
+            "factory": "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac"
+        }
+    }
+}

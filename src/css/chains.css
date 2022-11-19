@@ -1,0 +1,25 @@
+.chains-wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.chain-card{
+    border: solid 1px black;
+    padding: 1rem;
+    border-radius: 0.5em;
+    background-color: var(---light-bg);
+    text-align: center;
+    min-height: 100px;
+    cursor: pointer;
+    scale: 1;
+    transition: all 1s ease-out;
+    z-index: -1;
+    box-shadow: rgb(0 0 0 / 8%) 0px 0px 1px, rgb(0 0 0 / 8%) 0px 4px 8px, rgb(0 0 0 / 8%) 0px 16px 24px, rgb(0 0 0 / 6%) 0px 24px 32px;
+}
+
+.chain-card:hover{
+    scale: 1.05;
+    z-index: 5;
+    box-shadow: rgb(0 0 0 / 25%) 0px 0px 1px, rgb(0 0 0 / 25%) 0px 4px 8px, rgb(0 0 0 / 25%) 0px 16px 24px, rgb(0 0 0 / 10%) 0px 24px 32px;
+}
