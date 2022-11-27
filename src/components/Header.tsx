@@ -10,7 +10,7 @@ const Header = (props:any) => {
                 </div>
                 <div>
                     <div>
-                        <a href="">Docs</a>
+                        <a href="https://dtiv.gitbook.io/ylideconnect/">Docs</a>
                     </div>
                 </div>
                 <div className="full-menu-wrap">

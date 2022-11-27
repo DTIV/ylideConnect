@@ -51,12 +51,16 @@ const TokenSearch = (props: {provider:any, mmProvider:any | undefined, connected
                         await delay(10000)
                         let pageNo = getPageNo + 1
                         const data = await checkHolders(pageNo, pageSize, registered)
+                        console.log(data)
                         registered = data.registered
-                        let hasMore = data.pagination.has_more
-                        if(!hasMore){
-                            setPageNo(0)
-                            return
+                        if(data.pagination){
+                            let hasMore = data.pagination.has_more
+                            if(!hasMore){
+                                setPageNo(0)
+                                return
+                            }
                         }
+                        
                         setPageNo(pageNo)
                     }
                 }
@@ -81,6 +85,8 @@ const TokenSearch = (props: {provider:any, mmProvider:any | undefined, connected
     const checkHolders = async (pageNo:number, pageSize:number, registered: string[]) => {
         let pagination
         try{
+            const url = `https://api.covalenthq.com/v1/${chainId}/tokens/${getAddress}/token_holders/?page-number=2&page-size=${pageSize}&key=${process.env.REACT_APP_COVALENT_API}`
+            console.log(url)
             const res = await axios.get(`https://api.covalenthq.com/v1/${chainId}/tokens/${getAddress}/token_holders/?page-number=2&page-size=${pageSize}&key=${process.env.REACT_APP_COVALENT_API}`)
             pagination = res.data.data.pagination
             const data = res.data.data
