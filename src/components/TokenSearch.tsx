@@ -87,7 +87,9 @@ const TokenSearch = (props: {provider:any, mmProvider:any | undefined, connected
         try{
             const url = `https://api.covalenthq.com/v1/${chainId}/tokens/${getAddress}/token_holders/?page-number=2&page-size=${pageSize}&key=${process.env.REACT_APP_COVALENT_API}`
             console.log(url)
-            const res = await axios.get(`https://api.covalenthq.com/v1/${chainId}/tokens/${getAddress}/token_holders/?page-number=2&page-size=${pageSize}&key=${process.env.REACT_APP_COVALENT_API}`)
+            const res = await axios.get(`https://api.covalenthq.com/v1/${chainId}/tokens/${getAddress}/token_holders/?page-number=2&page-size=${pageSize}&key=${process.env.REACT_APP_COVALENT_API}`, {withCredentials: false, headers: {
+                'Access-Control-Allow-Origin': '*',
+              }})
             pagination = res.data.data.pagination
             const data = res.data.data
             const holders = data.items
